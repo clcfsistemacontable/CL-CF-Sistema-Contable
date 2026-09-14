@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>CL&CF — Sistema Contable</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="loginView" class="login-page">
+  <div class="login-card">
+    <img src="logo.jpg" class="login-logo" alt="CL&CF Sistema Contable">
+    <div class="login-title">Acceso al sistema</div>
+    <p class="muted">Gestión contable multiempresa</p>
+    <form id="loginForm">
+      <label>Usuario<input id="loginUser" required autocomplete="username" placeholder="Ingrese su usuario"></label>
+      <label>Contraseña<input id="loginPass" required type="password" autocomplete="current-password" placeholder="Ingrese su contraseña"></label>
+      <button class="btn primary full" type="submit">Ingresar al sistema</button>
+      <div id="loginError" class="error"></div>
+    </form>
+    <div class="demo">Demo V1 · Usuario: <b>admin</b> · Contraseña: <b>CL&CF2026</b></div>
+  </div>
+</div>
+
+<div id="appView" class="app hidden">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><img src="logo.jpg" alt="CL&CF"><div><b>CL&CF</b><span>Sistema Contable</span></div></div>
+    <div class="company-mini"><span>Empresa activa</span><b id="sideCompany">Sin empresa</b><small id="sidePeriod">Gestión —</small></div>
+    <nav>
+      <button data-page="dashboard" class="nav-item active">⌂ <span>Dashboard</span></button>
+      <div class="nav-group"><div class="nav-label">CONTABILIDAD</div>
+        <button data-page="accounts" class="nav-item">▤ <span>Plan de cuentas</span></button>
+        <button data-page="vouchers" class="nav-item">✎ <span>Comprobantes</span></button>
+        <button data-page="journal" class="nav-item">▥ <span>Libro Diario</span></button>
+        <button data-page="ledger" class="nav-item">▤ <span>Libro Mayor</span></button>
+        <button data-page="trial" class="nav-item">≡ <span>Balance de comprobación</span></button>
+        <button data-page="adjustments" class="nav-item">⚙ <span>Ajustes</span></button>
+      </div>
+      <div class="nav-group"><div class="nav-label">ESTADOS FINANCIEROS</div>
+        <button data-page="statements" class="nav-item">▦ <span>Estados financieros</span></button>
+        <button data-page="notes" class="nav-item">▤ <span>Notas</span></button>
+      </div>
+      <div class="nav-group"><div class="nav-label">MÓDULOS</div>
+        <button data-page="banks" class="nav-item">▣ <span>Bancos</span></button>
+        <button data-page="inventory" class="nav-item">▥ <span>Inventarios</span></button>
+        <button data-page="assets" class="nav-item">▰ <span>Activos fijos</span></button>
+        <button data-page="intangibles" class="nav-item">◇ <span>Intangibles</span></button>
+        <button data-page="receivables" class="nav-item">$ <span>Cuentas por cobrar</span></button>
+        <button data-page="payables" class="nav-item">$ <span>Cuentas por pagar</span></button>
+      </div>
+      <div class="nav-group"><div class="nav-label">NORMATIVA Y PARÁMETROS</div>
+        <button data-page="standards" class="nav-item">✓ <span>NC 1–14 · NIC · NIIF</span></button>
+        <button data-page="parameters" class="nav-item">◉ <span>UFV y tipos de cambio</span></button>
+        <button data-page="companies" class="nav-item">▦ <span>Empresas y gestiones</span></button>
+      </div>
+      <div class="nav-group"><div class="nav-label">REPORTES</div>
+        <button data-page="reports" class="nav-item">↗ <span>Exportar / Imprimir</span></button>
+      </div>
+    </nav>
+    <button id="logoutBtn" class="logout">↪ Cerrar sesión</button>
+  </aside>
+  <main class="main">
+    <header class="topbar"><button id="menuBtn" class="mobile-menu">☰</button><div><span class="eyebrow">CL&CF — Sistema Contable</span><h1 id="pageTitle">Dashboard</h1></div><div class="top-actions"><span id="topPeriod" class="period-badge">Sin gestión</span><button id="switchCompany" class="btn ghost">Cambiar empresa</button></div></header>
+    <div id="content" class="content"></div>
+  </main>
+</div>
+
+<div id="modal" class="modal hidden"><div class="modal-card"><div class="modal-head"><h2 id="modalTitle">Formulario</h2><button id="modalClose">×</button></div><div id="modalBody"></div></div></div>
+<script src="script.js"></script>
+</body>
+</html>
